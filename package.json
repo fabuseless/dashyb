@@ -1,0 +1,11 @@
+{
+  "name": "dashyb",
+  "private": true,
+  "type": "module",
+  "description": "AI model news & release dashboard (static site + scheduled data snapshot)",
+  "scripts": {
+    "update": "node scripts/update-data.mjs",
+    "serve": "python3 -m http.server 8080"
+  },
+  "engines": { "node": ">=20" }
+}
