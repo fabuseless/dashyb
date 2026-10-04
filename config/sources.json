@@ -1,0 +1,369 @@
+{
+  "_comment": "Curated configuration for the dashboard. Edit freely: the updater script and the web pages both read this file. 'headline' entries are hand-picked flagships (update when a lab ships a new one); the 'Latest API releases' list under each provider is detected automatically from OpenRouter.",
+
+  "providers": [
+    {
+      "id": "openai",
+      "name": "OpenAI",
+      "color": "#10a37f",
+      "openrouter": ["openai"],
+      "x": "OpenAI",
+      "links": {
+        "Site": "https://openai.com",
+        "News": "https://openai.com/news/",
+        "Models": "https://platform.openai.com/docs/models",
+        "Pricing": "https://openai.com/api/pricing/",
+        "Status": "https://status.openai.com"
+      },
+      "headline": {
+        "name": "GPT-6.1 Sol",
+        "released": "2026-09-29",
+        "summary": "Upgrade to GPT-6 Sol, positioned below the GPT-6 Astra flagship. Aimed at agentic coding, computer use and document-heavy work. 1M+ context window.",
+        "link": "https://openai.com/index/introducing-gpt-6-1-sol"
+      },
+      "family": [
+        { "name": "GPT-6 Astra (flagship)", "link": "https://news.smol.ai/issues/26-09-03-gpt-6-astra/" },
+        { "name": "GPT-6 Luna", "link": "https://openrouter.ai/openai/gpt-6-luna" },
+        { "name": "GPT-6 model guide", "link": "https://openai.com/index/practical-guide-building-gpt-6" }
+      ]
+    },
+    {
+      "id": "anthropic",
+      "name": "Anthropic",
+      "color": "#d97757",
+      "openrouter": ["anthropic"],
+      "x": "AnthropicAI",
+      "links": {
+        "Site": "https://www.anthropic.com",
+        "News": "https://www.anthropic.com/news",
+        "Models": "https://docs.claude.com/en/docs/about-claude/models/overview",
+        "Pricing": "https://www.anthropic.com/pricing",
+        "Status": "https://status.claude.com"
+      },
+      "headline": {
+        "name": "Claude Opus 5.5",
+        "released": "2026-09-22",
+        "summary": "Anthropic's flagship for demanding reasoning, coding and long-horizon agentic work, succeeding Opus 5. 1M-token context.",
+        "link": "https://openrouter.ai/anthropic/claude-opus-5.5"
+      },
+      "family": [
+        { "name": "Claude Sonnet 5.5", "link": "https://openrouter.ai/anthropic/claude-sonnet-5.5" },
+        { "name": "Claude Fable 5.1 / Mythos 5.1", "link": "https://news.smol.ai/issues/26-09-01-claude-mythos-51/" },
+        { "name": "Prompting Opus 5.5", "link": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/prompting-claude-opus-5-5" }
+      ]
+    },
+    {
+      "id": "google",
+      "name": "Google DeepMind",
+      "color": "#4285f4",
+      "openrouter": ["google"],
+      "x": "GoogleDeepMind",
+      "links": {
+        "Site": "https://deepmind.google",
+        "News": "https://deepmind.google/blog/",
+        "Models": "https://ai.google.dev/gemini-api/docs/models",
+        "Pricing": "https://ai.google.dev/gemini-api/docs/pricing",
+        "AI Studio": "https://aistudio.google.com"
+      },
+      "headline": {
+        "name": "Gemini 4 Argon",
+        "released": "2026-09-30",
+        "summary": "Google's next-generation frontier model, the first of the Gemini 4 family. Gemini 3.8 Flash (Sep 2) remains the fast, low-cost workhorse.",
+        "link": "https://deepmind.google/blog/gemini-4-argon-our-next-era-of-frontier-intelligence/"
+      },
+      "family": [
+        { "name": "Gemini 3.8 Flash", "link": "https://deepmind.google/blog/introducing-gemini-3-8-flash-and-38-flash-cyber/" },
+        { "name": "Gemini 3.8 Live", "link": "https://deepmind.google/blog/introducing-gemini-3-8-live-and-3-8-live-extended-thinking/" }
+      ]
+    },
+    {
+      "id": "xai",
+      "name": "SpaceXAI (xAI)",
+      "color": "#8b8b8b",
+      "openrouter": ["x-ai"],
+      "x": "xai",
+      "links": {
+        "Site": "https://x.ai",
+        "News": "https://x.ai/news",
+        "Models": "https://docs.x.ai/docs/models",
+        "Grok": "https://grok.com"
+      },
+      "headline": {
+        "name": "Grok 4.7",
+        "released": "2026-09-21",
+        "summary": "Flagship for coding, agentic tasks and knowledge work, succeeding Grok 4.6. Strong on long-running software engineering. 500K context.",
+        "link": "https://x.ai/news/grok-4-7"
+      },
+      "family": [
+        { "name": "Grok Build", "link": "https://x.ai/news/grok-build-memory" },
+        { "name": "Grok Bot", "link": "https://x.ai/news/grok-bot-for-enterprise" }
+      ]
+    },
+    {
+      "id": "meta",
+      "name": "Meta (MSL)",
+      "color": "#0866ff",
+      "openrouter": ["meta", "meta-llama"],
+      "x": "AIatMeta",
+      "links": {
+        "Site": "https://ai.meta.com",
+        "News": "https://ai.meta.com/blog/",
+        "Meta AI": "https://www.meta.ai"
+      },
+      "headline": {
+        "name": "Muse Spark 1.3",
+        "released": "2026-09-02",
+        "summary": "Meta Superintelligence Labs' multimodal reasoning model for long-running agentic, multi-agent and coding workflows. 1M context; cheap 'Contributor' tier available.",
+        "link": "https://openrouter.ai/meta/muse-spark-1.3"
+      },
+      "family": [
+        { "name": "Muse Glimmer 30B (open weights)", "link": "https://openrouter.ai/meta/muse-glimmer-30b" },
+        { "name": "Muse Image & Video", "link": "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/" }
+      ]
+    },
+    {
+      "id": "deepseek",
+      "name": "DeepSeek",
+      "color": "#4d6bfe",
+      "openrouter": ["deepseek"],
+      "x": "deepseek_ai",
+      "links": {
+        "Site": "https://www.deepseek.com",
+        "API docs": "https://api-docs.deepseek.com",
+        "Hugging Face": "https://huggingface.co/deepseek-ai"
+      },
+      "headline": {
+        "name": "DeepSeek V4 Pro",
+        "released": "2026-08-13",
+        "summary": "Large open-weight mixture-of-experts model (GA release). V4.1 Flash (Sep 10) is the newer, much cheaper sibling. 1M context.",
+        "link": "https://openrouter.ai/deepseek/deepseek-v4-pro-0813"
+      },
+      "family": [
+        { "name": "DeepSeek V4.1 Flash", "link": "https://openrouter.ai/deepseek/deepseek-v4.1-flash" }
+      ]
+    },
+    {
+      "id": "qwen",
+      "name": "Alibaba Qwen",
+      "color": "#615ced",
+      "openrouter": ["qwen"],
+      "x": "Alibaba_Qwen",
+      "links": {
+        "Site": "https://qwen.ai",
+        "Chat": "https://chat.qwen.ai",
+        "Hugging Face": "https://huggingface.co/Qwen"
+      },
+      "headline": {
+        "name": "Qwen3.8 Max",
+        "released": "2026-09-03",
+        "summary": "Qwen's top proprietary model; accepts text, image and video. Open-weight Qwen3.8 models (e.g. 27B) are widely fine-tuned.",
+        "link": "https://openrouter.ai/qwen/qwen3.8-max-0902"
+      },
+      "family": [
+        { "name": "Qwen3.8 Max Prime", "link": "https://openrouter.ai/qwen/qwen3.8-max-prime" },
+        { "name": "Qwen3.8 27B (open)", "link": "https://openrouter.ai/qwen/qwen3.8-27b" }
+      ]
+    },
+    {
+      "id": "mistral",
+      "name": "Mistral AI",
+      "color": "#fa520f",
+      "openrouter": ["mistralai"],
+      "x": "MistralAI",
+      "links": {
+        "Site": "https://mistral.ai",
+        "News": "https://mistral.ai/news",
+        "Models": "https://docs.mistral.ai/getting-started/models/",
+        "Le Chat": "https://chat.mistral.ai"
+      },
+      "headline": {
+        "name": "Mistral Medium 3.5",
+        "released": "2026-04-30",
+        "summary": "Dense 128B model for agentic workflows, coding and complex reasoning; text and image input.",
+        "link": "https://openrouter.ai/mistralai/mistral-medium-3-5"
+      },
+      "family": [
+        { "name": "Mistral Small 2603", "link": "https://openrouter.ai/mistralai/mistral-small-2603" }
+      ]
+    },
+    {
+      "id": "moonshot",
+      "name": "Moonshot AI",
+      "color": "#7b8794",
+      "openrouter": ["moonshotai"],
+      "x": "Kimi_Moonshot",
+      "links": {
+        "Kimi": "https://www.kimi.com",
+        "Platform": "https://platform.moonshot.ai",
+        "Hugging Face": "https://huggingface.co/moonshotai"
+      },
+      "headline": {
+        "name": "Kimi K3",
+        "released": "2026-07-16",
+        "summary": "2.8T-parameter open-weight multimodal reasoning model for coding, knowledge work and long-horizon agents.",
+        "link": "https://openrouter.ai/moonshotai/kimi-k3"
+      },
+      "family": []
+    },
+    {
+      "id": "zai",
+      "name": "Z.ai (Zhipu)",
+      "color": "#2d5bff",
+      "openrouter": ["z-ai"],
+      "x": "Zai_org",
+      "links": {
+        "Site": "https://z.ai",
+        "Docs": "https://docs.z.ai",
+        "Hugging Face": "https://huggingface.co/zai-org"
+      },
+      "headline": {
+        "name": "GLM-5.3",
+        "released": "2026-08-18",
+        "summary": "Large reasoning model built for complex software engineering and long-horizon agents. 1M context.",
+        "link": "https://openrouter.ai/z-ai/glm-5.3"
+      },
+      "family": [
+        { "name": "GLM-5.3 Prime", "link": "https://openrouter.ai/z-ai/glm-5.3-prime" }
+      ]
+    },
+    {
+      "id": "minimax",
+      "name": "MiniMax",
+      "color": "#e2167e",
+      "openrouter": ["minimax"],
+      "x": "MiniMax__AI",
+      "links": {
+        "Site": "https://www.minimax.io",
+        "Hugging Face": "https://huggingface.co/MiniMaxAI"
+      },
+      "headline": {
+        "name": "MiniMax-M3",
+        "released": "2026-05-31",
+        "summary": "Multimodal foundation model (text, image, video in) with 1M context, tuned for agentic work and coding.",
+        "link": "https://openrouter.ai/minimax/minimax-m3"
+      },
+      "family": []
+    },
+    {
+      "id": "cohere",
+      "name": "Cohere",
+      "color": "#39594d",
+      "openrouter": ["cohere"],
+      "x": "cohere",
+      "links": {
+        "Site": "https://cohere.com",
+        "Docs": "https://docs.cohere.com/docs/models"
+      },
+      "headline": {
+        "name": "Command A+",
+        "released": "2026-09-22",
+        "summary": "Cohere's enterprise-focused flagship for retrieval, tool use and business workflows.",
+        "link": "https://openrouter.ai/cohere/command-a-plus"
+      },
+      "family": []
+    }
+  ],
+
+  "feeds": [
+    { "id": "openai", "name": "OpenAI News", "url": "https://openai.com/news/rss.xml", "category": "Labs", "site": "https://openai.com/news/" },
+    { "id": "anthropic", "name": "Anthropic News", "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_anthropic_news.xml", "category": "Labs", "site": "https://www.anthropic.com/news" },
+    { "id": "deepmind", "name": "Google DeepMind", "url": "https://deepmind.google/blog/rss.xml", "category": "Labs", "site": "https://deepmind.google/blog/" },
+    { "id": "googleai", "name": "Google AI Blog", "url": "https://blog.google/technology/ai/rss/", "category": "Labs", "site": "https://blog.google/technology/ai/" },
+    { "id": "xai", "name": "SpaceXAI News", "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_xainews.xml", "category": "Labs", "site": "https://x.ai/news" },
+    { "id": "meta", "name": "Meta AI Blog", "url": "https://raw.githubusercontent.com/Olshansk/rss-feeds/main/feeds/feed_meta_ai.xml", "category": "Labs", "site": "https://ai.meta.com/blog/" },
+    { "id": "huggingface", "name": "Hugging Face Blog", "url": "https://huggingface.co/blog/feed.xml", "category": "Labs", "site": "https://huggingface.co/blog" },
+    { "id": "nvidia", "name": "NVIDIA Blog", "url": "https://blogs.nvidia.com/feed/", "category": "Labs", "site": "https://blogs.nvidia.com" },
+    { "id": "ainews", "name": "AINews (smol.ai)", "url": "https://news.smol.ai/rss.xml", "category": "Newsletters", "site": "https://news.smol.ai" },
+    { "id": "simonw", "name": "Simon Willison", "url": "https://simonwillison.net/atom/everything/", "category": "Newsletters", "site": "https://simonwillison.net" },
+    { "id": "latentspace", "name": "Latent Space", "url": "https://www.latent.space/feed", "category": "Newsletters", "site": "https://www.latent.space" },
+    { "id": "interconnects", "name": "Interconnects", "url": "https://www.interconnects.ai/feed", "category": "Newsletters", "site": "https://www.interconnects.ai" },
+    { "id": "importai", "name": "Import AI", "url": "https://importai.substack.com/feed", "category": "Newsletters", "site": "https://importai.substack.com" },
+    { "id": "verge", "name": "The Verge – AI", "url": "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml", "category": "Press", "site": "https://www.theverge.com/ai-artificial-intelligence" },
+    { "id": "techcrunch", "name": "TechCrunch – AI", "url": "https://techcrunch.com/category/artificial-intelligence/feed/", "category": "Press", "site": "https://techcrunch.com/category/artificial-intelligence/" },
+    { "id": "ars", "name": "Ars Technica – AI", "url": "https://arstechnica.com/ai/feed/", "category": "Press", "site": "https://arstechnica.com/ai/" },
+    { "id": "mittr", "name": "MIT Technology Review – AI", "url": "https://www.technologyreview.com/topic/artificial-intelligence/feed", "category": "Press", "site": "https://www.technologyreview.com/topic/artificial-intelligence/" }
+  ],
+
+  "community": {
+    "hnQueries": ["LLM", "OpenAI", "Anthropic", "Claude", "Gemini", "GPT", "DeepSeek", "Qwen", "AI model", "Grok", "Mistral", "Hugging Face", "AI agent", "open weights"],
+    "subreddits": ["LocalLLaMA", "singularity", "OpenAI", "ClaudeAI", "MachineLearning"],
+    "blueskyQuery": "LLM OR \"AI model\" OR OpenAI OR Anthropic OR Gemini OR Claude OR GPT",
+    "blueskyHandles": ["simonwillison.net", "emollick.bsky.social", "garymarcus.bsky.social", "timkellogg.me", "natolambert.bsky.social", "karpathy.bsky.social"]
+  },
+
+  "xAccounts": [
+    { "handle": "OpenAI", "name": "OpenAI", "group": "Labs" },
+    { "handle": "AnthropicAI", "name": "Anthropic", "group": "Labs" },
+    { "handle": "GoogleDeepMind", "name": "Google DeepMind", "group": "Labs" },
+    { "handle": "xai", "name": "xAI", "group": "Labs" },
+    { "handle": "AIatMeta", "name": "AI at Meta", "group": "Labs" },
+    { "handle": "MistralAI", "name": "Mistral AI", "group": "Labs" },
+    { "handle": "deepseek_ai", "name": "DeepSeek", "group": "Labs" },
+    { "handle": "Alibaba_Qwen", "name": "Qwen", "group": "Labs" },
+    { "handle": "Kimi_Moonshot", "name": "Kimi (Moonshot)", "group": "Labs" },
+    { "handle": "huggingface", "name": "Hugging Face", "group": "Labs" },
+    { "handle": "sama", "name": "Sam Altman", "group": "Leaders" },
+    { "handle": "DarioAmodei", "name": "Dario Amodei", "group": "Leaders" },
+    { "handle": "demishassabis", "name": "Demis Hassabis", "group": "Leaders" },
+    { "handle": "ylecun", "name": "Yann LeCun", "group": "Leaders" },
+    { "handle": "AndrewYNg", "name": "Andrew Ng", "group": "Leaders" },
+    { "handle": "karpathy", "name": "Andrej Karpathy", "group": "Researchers & builders" },
+    { "handle": "simonw", "name": "Simon Willison", "group": "Researchers & builders" },
+    { "handle": "emollick", "name": "Ethan Mollick", "group": "Researchers & builders" },
+    { "handle": "natolambert", "name": "Nathan Lambert", "group": "Researchers & builders" },
+    { "handle": "DrJimFan", "name": "Jim Fan", "group": "Researchers & builders" },
+    { "handle": "swyx", "name": "swyx", "group": "Researchers & builders" },
+    { "handle": "jeremyphoward", "name": "Jeremy Howard", "group": "Researchers & builders" },
+    { "handle": "_akhaliq", "name": "AK (papers)", "group": "Trackers" },
+    { "handle": "lmarena_ai", "name": "LMArena", "group": "Trackers" },
+    { "handle": "ArtificialAnlys", "name": "Artificial Analysis", "group": "Trackers" },
+    { "handle": "OpenRouterAI", "name": "OpenRouter", "group": "Trackers" },
+    { "handle": "EpochAIResearch", "name": "Epoch AI", "group": "Trackers" },
+    { "handle": "METR_Evals", "name": "METR", "group": "Trackers" },
+    { "handle": "testingcatalog", "name": "TestingCatalog (leaks)", "group": "Trackers" }
+  ],
+
+  "sites": [
+    { "group": "Leaderboards & benchmarks", "items": [
+      { "name": "LMArena", "url": "https://lmarena.ai/leaderboard", "desc": "Crowd-sourced head-to-head model rankings (text, vision, webdev)." },
+      { "name": "Artificial Analysis", "url": "https://artificialanalysis.ai", "desc": "Independent intelligence, speed and price comparisons across models and providers." },
+      { "name": "OpenRouter Rankings", "url": "https://openrouter.ai/rankings", "desc": "Which models developers actually use, by token volume." },
+      { "name": "Epoch AI", "url": "https://epoch.ai/data", "desc": "Benchmarks hub, compute trends and data on notable models." },
+      { "name": "LiveBench", "url": "https://livebench.ai", "desc": "Contamination-resistant benchmark refreshed monthly." },
+      { "name": "SWE-bench", "url": "https://www.swebench.com", "desc": "Real-world GitHub issue resolution for coding agents." },
+      { "name": "METR", "url": "https://metr.org", "desc": "Time-horizon and dangerous-capability evaluations of frontier models." },
+      { "name": "Scale SEAL", "url": "https://scale.com/leaderboard", "desc": "Expert-built private leaderboards (Humanity's Last Exam etc.)." }
+    ]},
+    { "group": "News & newsletters", "items": [
+      { "name": "AINews (smol.ai)", "url": "https://news.smol.ai", "desc": "Daily recap of X/Twitter, Reddit and Discord AI chatter." },
+      { "name": "Simon Willison's Weblog", "url": "https://simonwillison.net", "desc": "Hands-on notes on every notable model release." },
+      { "name": "Latent Space", "url": "https://www.latent.space", "desc": "AI engineering newsletter and podcast." },
+      { "name": "Interconnects", "url": "https://www.interconnects.ai", "desc": "Nathan Lambert on open models, RLHF and post-training." },
+      { "name": "Import AI", "url": "https://importai.substack.com", "desc": "Jack Clark's weekly research digest." },
+      { "name": "The Batch", "url": "https://www.deeplearning.ai/the-batch/", "desc": "Andrew Ng's weekly AI newsletter." },
+      { "name": "Don't Worry About the Vase", "url": "https://thezvi.substack.com", "desc": "Zvi Mowshowitz's exhaustive weekly AI roundups." },
+      { "name": "One Useful Thing", "url": "https://www.oneusefulthing.org", "desc": "Ethan Mollick on using AI in practice." }
+    ]},
+    { "group": "Models, papers & code", "items": [
+      { "name": "Hugging Face", "url": "https://huggingface.co/models?sort=trending", "desc": "Trending open-weight models, datasets and Spaces." },
+      { "name": "HF Daily Papers", "url": "https://huggingface.co/papers", "desc": "Community-curated arXiv papers each day." },
+      { "name": "arXiv cs.CL", "url": "https://arxiv.org/list/cs.CL/recent", "desc": "Latest computation & language preprints." },
+      { "name": "OpenRouter Models", "url": "https://openrouter.ai/models?order=newest", "desc": "Every API model in one place, newest first, with pricing." },
+      { "name": "Ollama Library", "url": "https://ollama.com/library", "desc": "Run open models locally." },
+      { "name": "Papers with Code trends (HF)", "url": "https://huggingface.co/papers/trending", "desc": "Trending papers with code." }
+    ]},
+    { "group": "Community", "items": [
+      { "name": "r/LocalLLaMA", "url": "https://www.reddit.com/r/LocalLLaMA/", "desc": "The hub for open-weight and local model discussion." },
+      { "name": "r/singularity", "url": "https://www.reddit.com/r/singularity/", "desc": "Frontier-model news and speculation." },
+      { "name": "Hacker News", "url": "https://news.ycombinator.com", "desc": "Developer discussion of launches and papers." },
+      { "name": "LessWrong / Alignment Forum", "url": "https://www.alignmentforum.org", "desc": "AI safety and alignment research discussion." },
+      { "name": "Dwarkesh Podcast", "url": "https://www.dwarkesh.com", "desc": "Long-form interviews with lab leaders and researchers." }
+    ]},
+    { "group": "Status & pricing", "items": [
+      { "name": "OpenAI Status", "url": "https://status.openai.com", "desc": "API and ChatGPT incidents." },
+      { "name": "Claude Status", "url": "https://status.claude.com", "desc": "Claude API and apps incidents." },
+      { "name": "Google AI Studio Status", "url": "https://aistudio.google.com/status", "desc": "Gemini API status." },
+      { "name": "LLM Prices", "url": "https://www.llm-prices.com", "desc": "Quick per-token price calculator across providers." }
+    ]}
+  ]
+}
