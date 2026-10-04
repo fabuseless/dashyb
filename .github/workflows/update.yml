@@ -20,9 +20,13 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
+    outputs:
+      pages: ${{ steps.pages.outputs.enabled }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+        with:
+          ref: main   # always build on the latest main, even when re-running an old run
+      - uses: actions/setup-node@v5
         with:
           node-version: 22
       - name: Build data snapshot
@@ -31,15 +35,40 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/snapshot.json
-          if ! git diff --cached --quiet; then git commit -m "data: refresh snapshot" && git push; fi
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+          cp data/snapshot.json "$RUNNER_TEMP/snapshot.json"
+          for attempt in 1 2 3; do
+            # Re-apply the fresh snapshot on top of whatever main is now, so concurrent pushes never block us.
+            git fetch -q origin main
+            git reset -q --hard origin/main
+            cp "$RUNNER_TEMP/snapshot.json" data/snapshot.json
+            git add data/snapshot.json
+            if git diff --cached --quiet; then echo "Snapshot unchanged"; exit 0; fi
+            git commit -q -m "data: refresh snapshot"
+            git push -q origin HEAD:main && exit 0
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push snapshot after 3 attempts"; exit 1
+      - name: Check GitHub Pages is enabled
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/pages" --silent 2>/dev/null; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::warning title=GitHub Pages not enabled::Data was refreshed, but the site was not deployed. Enable it under Settings → Pages → Build and deployment → Source: GitHub Actions, then re-run this workflow."
+          fi
+      - if: steps.pages.outputs.enabled == 'true'
+        uses: actions/configure-pages@v5
+      - if: steps.pages.outputs.enabled == 'true'
+        uses: actions/upload-pages-artifact@v3
         with:
           path: .
 
   deploy:
     needs: update
+    if: needs.update.outputs.pages == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
